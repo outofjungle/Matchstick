@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -530,7 +530,7 @@ An SMD 1mm pitch JST-SH connector. Compatible with SparkFun Qwiic connectors.</d
 <pin name="3" x="10.16" y="2.54" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
 <pin name="4" x="10.16" y="5.08" visible="pad" length="middle" direction="pas" swaplevel="1" rot="R180"/>
 </symbol>
-<symbol name="M5STAMP-PICO" urn="urn:adsk.eagle:symbol:33764909/3" library_version="8">
+<symbol name="M5STAMP-PICO" urn="urn:adsk.eagle:symbol:33764909/4" library_version="9">
 <pin name="G26" x="17.78" y="48.26" length="middle" rot="R180"/>
 <pin name="G36" x="17.78" y="45.72" length="middle" direction="in" rot="R180"/>
 <pin name="G18" x="17.78" y="43.18" length="middle" rot="R180"/>
@@ -547,8 +547,8 @@ An SMD 1mm pitch JST-SH connector. Compatible with SparkFun Qwiic connectors.</d
 <pin name="GND@3" x="17.78" y="15.24" length="middle" direction="pwr" rot="R180"/>
 <pin name="G0" x="17.78" y="12.7" length="middle" rot="R180"/>
 <pin name="EN" x="17.78" y="10.16" length="middle" direction="pas" rot="R180"/>
-<pin name="G3" x="17.78" y="7.62" length="middle" rot="R180"/>
-<pin name="G1" x="17.78" y="5.08" length="middle" rot="R180"/>
+<pin name="RX0/G3" x="17.78" y="7.62" length="middle" rot="R180"/>
+<pin name="TX0/G1" x="17.78" y="5.08" length="middle" rot="R180"/>
 <pin name="3V3" x="17.78" y="2.54" length="middle" direction="pwr" rot="R180"/>
 <wire x1="12.7" y1="0" x2="12.7" y2="50.8" width="0.254" layer="94"/>
 <wire x1="12.7" y1="50.8" x2="0" y2="50.8" width="0.254" layer="94"/>
@@ -642,7 +642,7 @@ An SMD 1mm pitch JST-SH connector. Compatible with SparkFun Qwiic connectors.</d
 </device>
 </devices>
 </deviceset>
-<deviceset name="M5STAMP-PICO" urn="urn:adsk.eagle:component:33764913/3" prefix="U" uservalue="yes" library_version="8">
+<deviceset name="M5STAMP-PICO" urn="urn:adsk.eagle:component:33764913/4" prefix="U" uservalue="yes" library_version="9">
 <description>&lt;a href="https://docs.m5stack.com/en/core/stamp_pico"&gt;M5 Stamp Pico&lt;/a&gt;</description>
 <gates>
 <gate name="G$1" symbol="M5STAMP-PICO" x="0" y="0"/>
@@ -653,20 +653,20 @@ An SMD 1mm pitch JST-SH connector. Compatible with SparkFun Qwiic connectors.</d
 <connect gate="G$1" pin="3V3" pad="19"/>
 <connect gate="G$1" pin="EN" pad="16"/>
 <connect gate="G$1" pin="G0" pad="15"/>
-<connect gate="G$1" pin="G1" pad="18"/>
 <connect gate="G$1" pin="G18" pad="3"/>
 <connect gate="G$1" pin="G19" pad="4"/>
 <connect gate="G$1" pin="G21" pad="5"/>
 <connect gate="G$1" pin="G22" pad="6"/>
 <connect gate="G$1" pin="G25" pad="7"/>
 <connect gate="G$1" pin="G26" pad="1"/>
-<connect gate="G$1" pin="G3" pad="17"/>
 <connect gate="G$1" pin="G32" pad="12"/>
 <connect gate="G$1" pin="G33" pad="13"/>
 <connect gate="G$1" pin="G36" pad="2"/>
 <connect gate="G$1" pin="GND@1" pad="9"/>
 <connect gate="G$1" pin="GND@2" pad="10"/>
 <connect gate="G$1" pin="GND@3" pad="14"/>
+<connect gate="G$1" pin="RX0/G3" pad="17"/>
+<connect gate="G$1" pin="TX0/G1" pad="18"/>
 <connect gate="G$1" pin="VCC@1" pad="8"/>
 <connect gate="G$1" pin="VCC@2" pad="11"/>
 </connects>
@@ -4534,9 +4534,9 @@ DIN A5, landscape with doc field</description>
 <attribute name="LAST_DATE_TIME" x="140.97" y="10.16" size="2.286" layer="94"/>
 <attribute name="SHEET" x="154.305" y="5.08" size="2.54" layer="94"/>
 </instance>
-<instance part="J4" gate="G$1" x="129.54" y="53.34" smashed="yes" rot="MR0">
-<attribute name="VALUE" x="137.16" y="43.434" size="1.778" layer="96" font="vector" rot="MR0"/>
-<attribute name="NAME" x="137.16" y="64.008" size="1.778" layer="95" font="vector" rot="MR0"/>
+<instance part="J4" gate="G$1" x="125.73" y="50.8" smashed="yes" rot="R180">
+<attribute name="VALUE" x="133.35" y="60.706" size="1.778" layer="96" font="vector" rot="R180"/>
+<attribute name="NAME" x="133.35" y="40.132" size="1.778" layer="95" font="vector" rot="R180"/>
 </instance>
 </instances>
 <busses>
@@ -4564,8 +4564,8 @@ DIN A5, landscape with doc field</description>
 <wire x1="96.52" y1="73.66" x2="96.52" y2="71.12" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<wire x1="124.46" y1="60.96" x2="121.92" y2="60.96" width="0.1524" layer="91"/>
-<label x="121.92" y="60.96" size="0.8128" layer="95" rot="R180" xref="yes"/>
+<wire x1="120.65" y1="43.18" x2="118.11" y2="43.18" width="0.1524" layer="91"/>
+<label x="118.11" y="43.18" size="0.8128" layer="95" rot="MR0" xref="yes"/>
 <pinref part="J4" gate="G$1" pin="GND"/>
 </segment>
 <segment>
@@ -4611,8 +4611,8 @@ DIN A5, landscape with doc field</description>
 <label x="86.36" y="76.2" size="0.8128" layer="95" xref="yes"/>
 </segment>
 <segment>
-<wire x1="124.46" y1="55.88" x2="121.92" y2="55.88" width="0.1524" layer="91"/>
-<label x="121.92" y="55.88" size="0.8128" layer="95" rot="R180" xref="yes"/>
+<wire x1="120.65" y1="48.26" x2="118.11" y2="48.26" width="0.1524" layer="91"/>
+<label x="118.11" y="48.26" size="0.8128" layer="95" rot="MR0" xref="yes"/>
 <pinref part="J4" gate="G$1" pin="VCC"/>
 </segment>
 <segment>
@@ -4652,25 +4652,25 @@ DIN A5, landscape with doc field</description>
 <wire x1="144.78" y1="68.58" x2="144.78" y2="73.66" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="G1" class="0">
-<segment>
-<wire x1="124.46" y1="50.8" x2="83.82" y2="50.8" width="0.1524" layer="91"/>
-<pinref part="U1" gate="G$1" pin="G1"/>
-<pinref part="J4" gate="G$1" pin="RXI"/>
-</segment>
-</net>
-<net name="G3" class="0">
-<segment>
-<wire x1="124.46" y1="53.34" x2="83.82" y2="53.34" width="0.1524" layer="91"/>
-<pinref part="U1" gate="G$1" pin="G3"/>
-<pinref part="J4" gate="G$1" pin="TXO"/>
-</segment>
-</net>
 <net name="LED_PWR" class="0">
 <segment>
 <pinref part="R1" gate="G$1" pin="2"/>
 <pinref part="D9" gate="G$1" pin="A"/>
 <wire x1="144.78" y1="83.82" x2="144.78" y2="81.28" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="RX" class="0">
+<segment>
+<pinref part="U1" gate="G$1" pin="RX0/G3"/>
+<pinref part="J4" gate="G$1" pin="RXI"/>
+<wire x1="83.82" y1="53.34" x2="120.65" y2="53.34" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="TX" class="0">
+<segment>
+<pinref part="J4" gate="G$1" pin="TXO"/>
+<pinref part="U1" gate="G$1" pin="TX0/G1"/>
+<wire x1="120.65" y1="50.8" x2="83.82" y2="50.8" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
